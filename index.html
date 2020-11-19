@@ -1,0 +1,23 @@
+function getIconClasses(fileName){
+    console.log(fileName);
+    let ext = fileName.substr(fileName.lastIndexOf('.') + 1);
+    let fileTypes = [
+        {'pdf':'fas fa-file-pdf'}
+        ,{'doc':'fas fa-file-word'}
+        ,{'docx':'fas fa-file-word'}
+        ,{'jpg':'fas fa-file-image'}
+        ,{'jpeg':'fas fa-file-image'}
+        ,{'png':'fas fa-file-image'}
+    ];
+
+    let valObj = fileTypes.find((fileType)=>{
+        return fileType[ext];
+    });
+
+    if(typeof valObj !== 'undefined'){
+        return valObj[ext];
+    }else{
+        return 'fas fa-file-alt';
+    }
+
+}
